@@ -30,7 +30,6 @@ def plot_sentiment_score_distribution(df):
     return fig
 
 # Function to show Sentiment across the different months
-
 def generate_graph(df):
     monthly_sentiment = df.groupby('Month')['Sentiment Score'].mean()
 
@@ -56,7 +55,6 @@ def generate_graph(df):
 
     return fig
 
-
 # Function to generate Bar Chart: Monthly Count of Reviews
 def plot_monthly_review_counts(df):
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -76,25 +74,31 @@ def main():
         st.warning("Please upload an updated CSV file.")
         return
 
-    df = pd.read_csv(csv_file)
-
-    # Convert 'Date' column to datetime
-    df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d')
+    try:
+        df = pd.read_csv(csv_file)
+        df['Date'] = pd.to_datetime(df['Date'])
+        df['Date'] = df['Date'].dt.strftime('%Y-%m-%d')
+        df['Date'] = pd.to_datetime(df['Date'])
+    except (ValueError, KeyError):
+        st.error("Error: Invalid date format in the CSV file. Please ensure the date format is 'YYYY-MM-DD'.")
+        return
 
     st.title('Review Insights')
 
     st.sidebar.title('Filter Options')
 
     # Display the graphs based on user selection
-    selected_insights = st.sidebar.multiselect('Select Insights', ['Overall Sentiment Across Months','Trend of Sentiment Scores', 
-                        'Distribution of Overall Feelings', 'Distribution of Sentiment Scores', 'Monthly Count of Reviews'])
+    selected_insights = st.sidebar.multiselect('Select Insights', ['Overall Sentiment Across Months', 'Trend of Sentiment Scores',
+                                                                    'Distribution of Overall Feelings',
+                                                                    'Distribution of Sentiment Scores',
+                                                                    'Monthly Count of Reviews'])
 
     if 'Trend of Sentiment Scores' in selected_insights:
         st.subheader('Trend of Sentiment Scores over Time')
         fig = plot_sentiment_scores(df)
         st.pyplot(fig)
 
-    if 'Distribution of Overall Feelings'in selected_insights:
+    if 'Distribution of Overall Feelings' in selected_insights:
         st.subheader('Distribution of Overall Feelings')
         fig = plot_overall_feelings(df)
         st.pyplot(fig)
@@ -113,7 +117,7 @@ def main():
         st.subheader('Monthly Count of Reviews')
         fig = plot_monthly_review_counts(df)
         st.pyplot(fig)
-    
+
 if __name__ == '__main__':
     st.set_option('deprecation.showPyplotGlobalUse', False)
     main()
