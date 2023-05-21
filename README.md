@@ -13,7 +13,7 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 - Multilingual sentiment analysis: Supports languages such as English, Dutch, French, and more, with plans to expand to diverse African languages like Kiswahili.
 - Comprehensive insights: Analyzes review scores and generates informative graphs including line graphs, box plots...
 - Actionable recommendations: Provides businesses with tailored recommendations for improving customer experiences and overall performance.
-- Powered by state-of-the-art models: Utilizes Hugging Face's 'nlptown/bert-base-multilingual-uncased-sentiment' model for accurate sentiment analysis.
+- Powered by state-of-the-art models: Utilizes Hugging Face's ***'nlptown/bert-base-multilingual-uncased-sentiment'*** model for accurate sentiment analysis.
 - User-friendly interface: Offers an intuitive and easy-to-use interface for businesses to access and interpret analysis results.
 
 ## Installation
