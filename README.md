@@ -23,8 +23,8 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/yourusername/yourrepository.git
-   cd yourrepository
+   git clone https://github.com/john-thuo1/Multilingual_SentimentAnalysis_Tool
+   cd into your directory/ open with vscode
    ```
 2. Create a Virtual Environment:
     ```shell
