@@ -90,5 +90,3 @@ I have included an example implementation of Sentiment Analysis using Collab. If
 - Develop advanced recommendation algorithms based on sentiment analysis for tailored strategies.
 
 ---
-
-By leveraging advanced sentiment analysis techniques and powerful visualizations, the Multilingual Sentiment Analysis Tool equips businesses with the insights needed to thrive in diverse linguistic landscapes.
