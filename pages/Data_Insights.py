@@ -68,6 +68,8 @@ def plot_monthly_review_counts(df):
     return fig
 
 def main():
+    st.title("Business Data Insights")
+
     csv_file = st.file_uploader("Please upload Your Updated Business' Reviews", type=["csv"])
 
     if csv_file is None:
