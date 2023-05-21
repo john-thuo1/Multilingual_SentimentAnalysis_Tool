@@ -11,7 +11,7 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 ## Key Features
 
 - Multilingual sentiment analysis: Supports languages such as English, Dutch, French, and more, with plans to expand to diverse African languages like Kiswahili.
-- Comprehensive insights: Analyzes review scores and generates informative graphs including line graphs, box plots, and sentiment heatmaps.
+- Comprehensive insights: Analyzes review scores and generates informative graphs including line graphs, box plots...
 - Actionable recommendations: Provides businesses with tailored recommendations for improving customer experiences and overall performance.
 - Powered by state-of-the-art models: Utilizes Hugging Face's 'nlptown/bert-base-multilingual-uncased-sentiment' model for accurate sentiment analysis.
 - User-friendly interface: Offers an intuitive and easy-to-use interface for businesses to access and interpret analysis results.
@@ -24,30 +24,42 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
    git clone https://github.com/yourusername/yourrepository.git
    cd yourrepository
    ```
-
-2. Install the required dependencies:
+2. Create a Virtual Environment:
+    ```shell
+    python -m venv env
+    ```
+3. Install the required dependencies:
 
    ```shell
    pip install -r requirements.txt
    ```
-
-3. Run the tool:
+4. Create OpenAI API Key and add it to your .env file:
+   [openai](https://platform.openai.com/)
+   
+5. Run the application:
 
    ```shell
-   python sentiment_analysis_tool.py
+   streamlit run sentiment.py
    ```
 
 ## Usage
 
-1. Prepare your review data in a suitable format (CSV, JSON, etc.).
+1. Prepare your review data in a suitable format (Must have Date, Review, Month, Year columns).
 
-2. Provide the path to your review data when prompted.
+2. Upload the Data on the application.
 
-3. Select the desired language for sentiment analysis.
+3. Download the Updated Dataset. It should be populated with new Sentiment Score & Overall Columns.
 
-4. The tool will analyze the review scores and generate informative graphs to visualize the sentiment insights.
+4. To check the various Data Graphs, check 'insights' on the side-menu and upload the Updated Dataset.
 
-5. Review the analysis results and recommendations provided by the tool.
+5. On the insights, an option to choose the type of graph will be displayed. You can view 1 or all graphs.
+
+6. After, head to Business Recommendation and Upload the Updated Reviews Dataset. 
+
+3. The tool will analyze the review scores and generate informative graphs to visualize the sentiment insights.
+
+4. Review the analysis results( and recommendations provided by the tool. 
+    - The program will automatically generate the Recommendation using OpenAI's Engine ***text-davinci-003***,
 
 ## Contributing
 
@@ -59,14 +71,13 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-- The Multilingual Sentiment Analysis Tool was built using the 'nlptown/bert-base-multilingual-uncased-sentiment' model from Hugging Face.
-- We would like to thank the open-source community for their valuable contributions.
+- The Multilingual Sentiment Analysis Tool was built using the ***nlptown/bert-base-multilingual-uncased-sentiment*** model from Hugging Face.
 
 ## Contact
 
-For any inquiries or feedback, please contact [yourname@example.com](mailto:yourname@example.com).
+For any inquiries or feedback, please contact [john](mailto:j.mwangi@alustudent.com).
 
-## Roadmap
+## Next Steps
 
 - Expand language support to include diverse African languages like Kiswahili.
 - Enhance the sentiment analysis model to handle nuanced sentiments and improve accuracy.
@@ -75,4 +86,4 @@ For any inquiries or feedback, please contact [yourname@example.com](mailto:your
 
 ---
 
-By leveraging advanced sentiment analysis techniques and powerful visualizations, the Multilingual Sentiment Analysis Tool equips businesses with the insights needed to thrive in diverse linguistic landscapes. Gain a competitive edge and enhance customer satisfaction today!
+By leveraging advanced sentiment analysis techniques and powerful visualizations, the Multilingual Sentiment Analysis Tool equips businesses with the insights needed to thrive in diverse linguistic landscapes.
