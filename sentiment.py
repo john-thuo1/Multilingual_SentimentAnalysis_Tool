@@ -1,15 +1,15 @@
-# Main Page
 import base64
 import streamlit as st
 import pandas as pd
 import seaborn as sns
+import datetime
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import matplotlib.pyplot as plt
 
 # Load the NLP Model from Hugging Face
-@st.cache_data()
+@st.cache_data
 def load_model():
     tokenizer = AutoTokenizer.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
     model = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
@@ -47,7 +47,7 @@ def main():
             # Display the updated DataFrame
             st.dataframe(df.head())
 
-            csv_file_name = 'updated_reviews.csv'
+            csv_file_name = datetime.datetime.now().strftime("%d-%m-%y") + '_updated_reviews.csv'
             csv = df.to_csv(index=False)
 
             st.download_button(
@@ -56,7 +56,7 @@ def main():
                 file_name=csv_file_name,
                 mime='text/csv'
             )
-  
+
 
 if __name__ == '__main__':
     main()
