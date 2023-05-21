@@ -30,23 +30,32 @@ def plot_sentiment_score_distribution(df):
     return fig
 
 # Function to show Sentiment across the different months
+
 def generate_graph(df):
     monthly_sentiment = df.groupby('Month')['Sentiment Score'].mean()
 
     sentiment_counts = df.groupby(['Month', 'Overall']).size().unstack(fill_value=0)
 
+    num_labels = len(sentiment_counts.columns)
+    labels = sentiment_counts.columns
+
     # Plot the graph
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.plot(monthly_sentiment.index, monthly_sentiment.values, label='Average Sentiment Score')
-    ax.plot(sentiment_counts.index, sentiment_counts['Positive'], label='Positive')
-    ax.plot(sentiment_counts.index, sentiment_counts['Neutral'], label='Neutral')
-    ax.plot(sentiment_counts.index, sentiment_counts['Negative'], label='Negative')
+
+    if num_labels == 1 or num_labels == 2:
+        ax.plot(sentiment_counts.index, sentiment_counts[labels[0]], label=labels[0])
+    else:
+        for label in labels:
+            ax.plot(sentiment_counts.index, sentiment_counts[label], label=label)
+
     ax.set_xlabel('Month')
     ax.set_ylabel('Count / Average Score')
     ax.set_title('Overall Sentiment Across Months')
     ax.legend()
 
     return fig
+
 
 # Function to generate Bar Chart: Monthly Count of Reviews
 def plot_monthly_review_counts(df):
@@ -68,7 +77,7 @@ def main():
     df = pd.read_csv(csv_file)
 
     # Convert 'Date' column to datetime
-    df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%y')
+    df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d')
 
     st.title('Review Insights')
 
@@ -83,7 +92,7 @@ def main():
         fig = plot_sentiment_scores(df)
         st.pyplot(fig)
 
-    if 'Distribution of Overall Feelings' in selected_insights:
+    if 'Distribution of Overall Feelings'in selected_insights:
         st.subheader('Distribution of Overall Feelings')
         fig = plot_overall_feelings(df)
         st.pyplot(fig)
@@ -102,8 +111,7 @@ def main():
         st.subheader('Monthly Count of Reviews')
         fig = plot_monthly_review_counts(df)
         st.pyplot(fig)
-        
-
+    
 if __name__ == '__main__':
     st.set_option('deprecation.showPyplotGlobalUse', False)
     main()
