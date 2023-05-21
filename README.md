@@ -6,8 +6,9 @@
 
 The Multilingual Sentiment Analysis Tool is a powerful solution designed to help businesses gain valuable insights into customer sentiments across multiple languages. By analyzing review scores and providing actionable recommendations using OpenAI GPT models, this tool empowers local businesses to make data-driven decisions and enhance customer satisfaction.
 
-Business Recommendation Example
-![image](https://github.com/john-thuo1/Multilingual_SentimentAnalysis_Tool/assets/108690517/ebe17922-a5bb-4665-8478-26b333859aea)
+## HomePage
+![image](https://github.com/john-thuo1/Multilingual_SentimentAnalysis_Tool/assets/108690517/2325d3df-9d34-48d1-837c-e9a31791f394)
+
 
 ## Key Features
 
@@ -51,16 +52,14 @@ Business Recommendation Example
 
 3. Download the Updated Dataset. It should be populated with new Sentiment Score & Overall Columns.
 
-4. To check the various Data Graphs, check 'insights' on the side-menu and upload the Updated Dataset.
+4. To check the various Data Graphs, check 'Data_Insights' on the side-menu and upload the Updated Dataset.
 
-5. On the insights, an option to choose the type of graph will be displayed. You can view 1 or all graphs.
+5. Still on the Data_Insights, an option to choose the type of graph will be displayed. You can view 1 or all graphs.
 
-6. After, head to Business Recommendation and Upload the Updated Reviews Dataset. 
+6. The tool will analyze the review scores and generate informative graphs to visualize the sentiment insights.
 
-3. The tool will analyze the review scores and generate informative graphs to visualize the sentiment insights.
-
-4. Review the analysis results( and recommendations provided by the tool. 
-    - The program will automatically generate the Recommendation using OpenAI's Engine ***text-davinci-003***,
+7. Lastly, head to 'Business_Recommendation' and Upload the Updated Reviews Dataset. 
+    - After uploading, the program will automatically generate the Recommendation using OpenAI's Engine ***text-davinci-003***,
 
 ## Contributing
 
@@ -77,6 +76,11 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 ## Contact
 
 For any inquiries or feedback, please contact [john](mailto:j.mwangi@alustudent.com).
+
+## Note
+
+I have included an example implementation of Sentiment Analysis using Collab. If interested, check it within the repository.
+
 
 ## Next Steps
 
