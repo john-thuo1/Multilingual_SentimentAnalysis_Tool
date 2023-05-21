@@ -6,7 +6,8 @@
 
 The Multilingual Sentiment Analysis Tool is a powerful solution designed to help businesses gain valuable insights into customer sentiments across multiple languages. By analyzing review scores and providing actionable recommendations using OpenAI GPT models, this tool empowers local businesses to make data-driven decisions and enhance customer satisfaction.
 
-![Tool Preview](tool_preview.png)
+Business Recommendation Example
+![image](https://github.com/john-thuo1/Multilingual_SentimentAnalysis_Tool/assets/108690517/ebe17922-a5bb-4665-8478-26b333859aea)
 
 ## Key Features
 
