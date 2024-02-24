@@ -73,9 +73,6 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 
 - The Multilingual Sentiment Analysis Tool was built using the ***nlptown/bert-base-multilingual-uncased-sentiment*** model from Hugging Face.
 
-## Contact
-
-For any inquiries or feedback, please contact [john](mailto:j.mwangi@alustudent.com).
 
 ## Note
 
