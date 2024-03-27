@@ -1,73 +1,88 @@
-# Business Recommendation Page
 import streamlit as st
 import pandas as pd
-import os
-from dotenv import load_dotenv
-import openai
+from openai import OpenAI
+from decouple import config
 
-# Loading env variables
-load_dotenv()
+client = OpenAI(
+    api_key=config("OPENAI_API_KEY"),
+)
+
 
 def truncate_text(text, max_length):
     if len(text) > max_length:
         return text[:max_length] + "..."
     return text
 
-def generate_recommendation(business_data, api_key):
-    # Generate prompt for ChatGPT based on reviews and sentiment scores
-    prompt = ""
-    for index, row in business_data.iterrows():
+
+def generate_initial_recommendation(business_data):
+    message = ""
+    for _, row in business_data.iterrows():
         review = row['Review']
         sentiment_score = row['Sentiment Score']
-        # Truncate the review if it exceeds a certain length
         review = truncate_text(review, 500)
-        prompt += f"Review: {review}\nSentiment Score: {sentiment_score}\n"
-
-    # Truncate prompt to a maximum length of 4096 tokens
-    prompt = truncate_text(prompt, 4096)
-
-    # Generate completion using OpenAI API
-    openai.api_key = api_key
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt + "\nProvide a recommendation for the business based on the uploaded data:",
-        max_tokens=100,  # Increased the max_tokens value for a longer response
+        message += f"Review: {review}\nSentiment Score: {sentiment_score}\n"
+    message = truncate_text(message, 4096)
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Provide a thorough Business Recommendation based on the reviews and sentiment scores."},
+            {"role": "user", "content": message},
+        ],
     )
+    return response.choices[0].message.content.strip()
 
-    if response.choices[0].finish_reason == "stop":
-        recommendation = response.choices[0].text.strip()
-    else:
-        recommendation = "Error generating recommendation"
 
-    return recommendation
+def generate_follow_up_response(chat_history):
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=chat_history,
+    )
+    return response.choices[0].message.content.strip()
 
 
 def main():
-    st.title("Business Recommendation")
+    st.title("Business Recommendation Chat")
+    st.markdown(
+        """
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        """,
+        unsafe_allow_html=True,
+    )
 
-    # Upload CSV file
-    file = st.file_uploader("Upload a CSV file", type=["csv"])
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
 
+    file = st.file_uploader("Upload a CSV file for analysis", type=["csv"])
+    
     if file is not None:
         business_data = pd.read_csv(file)
-
-        # Display uploaded data
         st.subheader("Uploaded Business Data")
         st.write(business_data)
 
-        # Check if required columns exist
-        required_columns = ["Review", "Sentiment Score", "Date", "Month", "Year"]
+        required_columns = ["Review", "Sentiment Score"]
         if set(required_columns).issubset(business_data.columns):
-            st.subheader("Business Recommendation")
-            api_key = os.getenv('OPENAI_API_KEY')
-            recommendation = generate_recommendation(business_data, api_key)
+            if 'initial_recommendation_done' not in st.session_state:
+                recommendation = generate_initial_recommendation(business_data)
+                st.session_state.chat_history.append({"role": "assistant", "content": recommendation})
+                st.session_state.initial_recommendation_done = True
 
-            # Display recommendation
-            st.write("Summary Recommendation:")
-            st.write(str(recommendation))  # Convert recommendation to string
+
+            for chat_message in st.session_state.chat_history:
+                if chat_message["role"] == "user":
+                    st.markdown(f"<i class='fa-solid fa-user'></i> <strong>{chat_message['content']}</strong>", unsafe_allow_html=True)
+                else:  # role == "assistant"
+                    st.markdown(f"<i class='fas fa-robot'></i> {chat_message['content']}", unsafe_allow_html=True)
+
+
+            prompt = st.chat_input("Follow Up Question? Inquire from here ...")
+            if prompt:
+                st.session_state.chat_history.append({"role": "user", "content": prompt})
+                follow_up_response = generate_follow_up_response(st.session_state.chat_history)
+                st.session_state.chat_history.append({"role": "assistant", "content": follow_up_response})
+                st.rerun()
         else:
-            st.write("Error: The uploaded CSV file does not contain all the required columns.")
-
+            st.error("Error: The uploaded CSV file does not contain all the required columns.")
 
 if __name__ == "__main__":
     main()
