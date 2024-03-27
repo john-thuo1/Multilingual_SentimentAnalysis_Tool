@@ -59,7 +59,7 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 6. The tool will analyze the review scores and generate informative graphs to visualize the sentiment insights.
 
 7. Lastly, head to 'Business_Recommendation' and Upload the Updated Reviews Dataset. 
-    - After uploading, the program will automatically generate the Recommendation using OpenAI's Engine ***text-davinci-003***,
+    - After uploading, the program will automatically generate the Recommendation using OpenAI's Engine ***gpt3.5-turbo model***,
 
 ## Contributing
 
@@ -73,17 +73,11 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 
 - The Multilingual Sentiment Analysis Tool was built using the ***nlptown/bert-base-multilingual-uncased-sentiment*** model from Hugging Face.
 
-
-## Note
-
-I have included an example implementation of Sentiment Analysis using Collab. If interested, check it within the repository.
-
-
 ## Next Steps
 
 - Expand language support to include diverse African languages like Kiswahili.
 - Enhance the sentiment analysis model to handle nuanced sentiments and improve accuracy.
 - Incorporate real-time data analysis capabilities for monitoring customer sentiments.
-- Develop advanced recommendation algorithms based on sentiment analysis for tailored strategies.
+- Implement Session Management across multiple pages to improve UI.
 
 ---
