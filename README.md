@@ -1,10 +1,10 @@
-# Multilingual Sentiment Analysis Tool For Your Business
+# Multilingual Sentiment Analysis Tool For Your Business Reviews
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/yourrepository/blob/main/LICENSE)
 
 ## Overview
 
-The tool helps businesses gain valuable insights into customer sentiments. By analyzing review scores and providing actionable recommendations using OpenAI GPT models, this tool empowers local businesses to make data-driven decisions and enhance customer satisfaction.
+The **Multilingual Sentiment Analysis Tool** helps businesses gain valuable insights into customer sentiments by analyzing review scores. Powered by OpenAI GPT models, this tool provides actionable recommendations, empowering local businesses to make data-driven decisions and enhance customer satisfaction.
 
 ## HomePage
 ![image](https://github.com/user-attachments/assets/b4c45c92-e702-4368-b4e2-fad0b93bf1b0)
@@ -17,13 +17,11 @@ The tool helps businesses gain valuable insights into customer sentiments. By an
 ![image](https://github.com/user-attachments/assets/e0e9d100-7754-4d3b-aa37-ca55bf4336f2)
 ![image](https://github.com/user-attachments/assets/9da9c564-d615-4518-b3e1-7acc5f1a2348)
 
-
 ## Key Features
-- Powered by models such as Hugging Face's ***'nlptown/bert-base-multilingual-uncased-sentiment'*** model for accurate sentiment analysis and ***gpt4o model*** for recommendations.
-- Comprehensive insights - Analyzes review scores and generates informative graphs including 
-- Actionable recommendations - Provides businesses with tailored recommendations for improving customer experiences and overall performance.
-- Powered by state-of-the-art models - Utilizes Hugging Face's ***'nlptown/bert-base-multilingual-uncased-sentiment'*** model for accurate sentiment analysis.
-- User-friendly interface - Offers an intuitive and easy-to-use interface for businesses to access and interpret analysis results.
+- **Multilingual Sentiment Analysis**: Powered by Hugging Face's `nlptown/bert-base-multilingual-uncased-sentiment` model for accurate sentiment analysis in multiple languages.
+- **Actionable Business Insights**: The tool generates tailored recommendations using OpenAI's GPT-4 model, helping businesses improve customer experiences.
+- **Comprehensive Data Visualization**: Analyzes review scores and generates various insightful graphs.
+- **User-Friendly Interface**: Intuitive and easy-to-use, allowing businesses to quickly interpret the analysis results.
 
 ## Installation
 
@@ -33,47 +31,52 @@ The tool helps businesses gain valuable insights into customer sentiments. By an
    git clone https://github.com/john-thuo1/Multilingual_SentimentAnalysis_Tool
    cd into your directory/ open with vscode
    ```
-2. Create a Virtual Environment:
-    ```shell
-    python -m venv env
-    ```
+
+2. Create a virtual environment:
+
+   ```shell
+   python -m venv env
+   ```
+
 3. Install the required dependencies:
 
    ```shell
    pip install -r requirements.txt
    ```
-4. Create OpenAI API Key and add it to your .env file:
+
+4. Create an OpenAI API Key and add it to your `.env` file:
    [openai](https://platform.openai.com/)
-   
+
 5. Run the application:
 
    ```shell
-   streamlit run sentiment.py
+   streamlit run Home.py
    ```
 
 ## Usage
 
-1. Prepare your review data in a suitable format(have Date, Review, Month, and Year columns). You can also match the required columns when uploading the file.
+1. Prepare your review data in a suitable format, with at least `Date`, `Review`, `Month`, and `Year` columns. (You can use different column names, but ensure the application can match them during analysis.)
+   
+2. The application will download the updated dataset and store it locally. You can also download it directly from the browser, and it will include new columns for Sentiment Scores and Overall Sentiment.
 
-2. The application will download the updated dataset and store it within. You can also download it from the browser. It should be populated with new Sentiment Score & Overall Columns.
+3. For viewing various data graphs, navigate to the 'Data Visuals' section. You can explore different types of graphs based on the updated data.
 
-3. To check the various Data Graphs, check 'Data Visuals'. These graphs will use the updated data.
+4. In the 'Visuals' section, choose the type of graph you want to display. You can select one or all available graphs.
 
-4. Still on the Visuals, an option to choose the type of graph will be displayed. You can view 1 or all graphs.
-
-7. Lastly, head to 'Recommendations' for Business Insights informed by your Data and OpenAI's ***gpt4o model***.
+5. Finally, go to the 'Recommendations' section for tailored business insights powered by the OpenAI GPT-4 model.
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. For major changes, please discuss them first in the issue tracker.
+Contributions are welcome! If you have ideas, suggestions, or bug reports, feel free to open an issue or submit a pull request. For major changes, please discuss them first in the issue tracker.
 
 ## Acknowledgments
 
-- The Multilingual Sentiment Analysis Tool was built using the ***nlptown/bert-base-multilingual-uncased-sentiment*** model from Hugging Face.
+- The **Multilingual Sentiment Analysis Tool** is built using Hugging Face's `nlptown/bert-base-multilingual-uncased-sentiment` model for sentiment analysis.
+- OpenAI GPT models provide actionable recommendations for businesses.
 
 ## Next Steps
 
-- Expand language support to include diverse African languages like Kiswahili.
+- Expand language support to include diverse African languages, such as Kiswahili.
+- Modify the data input requirement to only need the `Date` field for analysis instead of `Date`, `Month`, and `Year`.
 - Enhance the sentiment analysis model to handle nuanced sentiments and improve accuracy.
-- Incorporate real-time data analysis capabilities for monitoring customer sentiments.
----
+- Incorporate real-time data analysis capabilities for continuous monitoring of customer sentiment.
