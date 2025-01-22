@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Multilingual Sentiment Analysis Tool is a powerful solution designed to help businesses gain valuable insights into customer sentiments across multiple languages. By analyzing review scores and providing actionable recommendations using OpenAI GPT models, this tool empowers local businesses to make data-driven decisions and enhance customer satisfaction.
+The tool helps businesses gain valuable insights into customer sentiments. By analyzing review scores and providing actionable recommendations using OpenAI GPT models, this tool empowers local businesses to make data-driven decisions and enhance customer satisfaction.
 
 ## HomePage
 ![image](https://github.com/user-attachments/assets/b4c45c92-e702-4368-b4e2-fad0b93bf1b0)
@@ -15,6 +15,8 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 
 ## Recommendations
 ![image](https://github.com/user-attachments/assets/828baa7b-102a-4425-ad1b-37d441ba2744)
+![image](https://github.com/user-attachments/assets/9da9c564-d615-4518-b3e1-7acc5f1a2348)
+
 
 
 
@@ -67,10 +69,6 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. For major changes, please discuss them first in the issue tracker.
 
-## License
-
-This project is licensed under the terms of the [MIT License](LICENSE).
-
 ## Acknowledgments
 
 - The Multilingual Sentiment Analysis Tool was built using the ***nlptown/bert-base-multilingual-uncased-sentiment*** model from Hugging Face.
@@ -80,6 +78,4 @@ This project is licensed under the terms of the [MIT License](LICENSE).
 - Expand language support to include diverse African languages like Kiswahili.
 - Enhance the sentiment analysis model to handle nuanced sentiments and improve accuracy.
 - Incorporate real-time data analysis capabilities for monitoring customer sentiments.
-- Implement Session Management across multiple pages to improve UI.
-
 ---
