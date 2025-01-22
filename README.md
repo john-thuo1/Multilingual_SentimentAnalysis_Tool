@@ -14,10 +14,8 @@ The tool helps businesses gain valuable insights into customer sentiments. By an
 ![image](https://github.com/user-attachments/assets/5a5159a5-9c27-4537-a808-6f331e49e865)
 
 ## Recommendations
-![image](https://github.com/user-attachments/assets/828baa7b-102a-4425-ad1b-37d441ba2744)
+![image](https://github.com/user-attachments/assets/e0e9d100-7754-4d3b-aa37-ca55bf4336f2)
 ![image](https://github.com/user-attachments/assets/9da9c564-d615-4518-b3e1-7acc5f1a2348)
-
-
 
 
 ## Key Features
