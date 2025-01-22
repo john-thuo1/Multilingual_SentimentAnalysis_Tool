@@ -7,16 +7,23 @@
 The Multilingual Sentiment Analysis Tool is a powerful solution designed to help businesses gain valuable insights into customer sentiments across multiple languages. By analyzing review scores and providing actionable recommendations using OpenAI GPT models, this tool empowers local businesses to make data-driven decisions and enhance customer satisfaction.
 
 ## HomePage
-![image](https://github.com/john-thuo1/Multilingual_SentimentAnalysis_Tool/assets/108690517/2325d3df-9d34-48d1-837c-e9a31791f394)
+![image](https://github.com/user-attachments/assets/b4c45c92-e702-4368-b4e2-fad0b93bf1b0)
+![image](https://github.com/user-attachments/assets/3bf13e67-bf32-4d68-9739-f5bb28a98c13)
+
+## Data Visuals 
+![image](https://github.com/user-attachments/assets/5a5159a5-9c27-4537-a808-6f331e49e865)
+
+## Recommendations
+![image](https://github.com/user-attachments/assets/828baa7b-102a-4425-ad1b-37d441ba2744)
+
 
 
 ## Key Features
-
-- Multilingual sentiment analysis: Supports languages such as English, Dutch, French, and more, with plans to expand to diverse African languages like Kiswahili.
-- Comprehensive insights: Analyzes review scores and generates informative graphs including line graphs, box plots...
-- Actionable recommendations: Provides businesses with tailored recommendations for improving customer experiences and overall performance.
-- Powered by state-of-the-art models: Utilizes Hugging Face's ***'nlptown/bert-base-multilingual-uncased-sentiment'*** model for accurate sentiment analysis.
-- User-friendly interface: Offers an intuitive and easy-to-use interface for businesses to access and interpret analysis results.
+- Powered by models such as Hugging Face's ***'nlptown/bert-base-multilingual-uncased-sentiment'*** model for accurate sentiment analysis and ***gpt4o model*** for recommendations.
+- Comprehensive insights - Analyzes review scores and generates informative graphs including 
+- Actionable recommendations - Provides businesses with tailored recommendations for improving customer experiences and overall performance.
+- Powered by state-of-the-art models - Utilizes Hugging Face's ***'nlptown/bert-base-multilingual-uncased-sentiment'*** model for accurate sentiment analysis.
+- User-friendly interface - Offers an intuitive and easy-to-use interface for businesses to access and interpret analysis results.
 
 ## Installation
 
@@ -46,20 +53,15 @@ The Multilingual Sentiment Analysis Tool is a powerful solution designed to help
 
 ## Usage
 
-1. Prepare your review data in a suitable format (Must have Date, Review, Month, Year columns).
+1. Prepare your review data in a suitable format(have Date, Review, Month, and Year columns). You can also match the required columns when uploading the file.
 
-2. Upload the Data on the application.
+2. The application will download the updated dataset and store it within. You can also download it from the browser. It should be populated with new Sentiment Score & Overall Columns.
 
-3. Download the Updated Dataset. It should be populated with new Sentiment Score & Overall Columns.
+3. To check the various Data Graphs, check 'Data Visuals'. These graphs will use the updated data.
 
-4. To check the various Data Graphs, check 'Data_Insights' on the side-menu and upload the Updated Dataset.
+4. Still on the Visuals, an option to choose the type of graph will be displayed. You can view 1 or all graphs.
 
-5. Still on the Data_Insights, an option to choose the type of graph will be displayed. You can view 1 or all graphs.
-
-6. The tool will analyze the review scores and generate informative graphs to visualize the sentiment insights.
-
-7. Lastly, head to 'Business_Recommendation' and Upload the Updated Reviews Dataset. 
-    - After uploading, the program will automatically generate the Recommendation using OpenAI's Engine ***gpt3.5-turbo model***,
+7. Lastly, head to 'Recommendations' for Business Insights informed by your Data and OpenAI's ***gpt4o model***.
 
 ## Contributing
 
