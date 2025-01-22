@@ -11,6 +11,7 @@ from src.utils import setup_logger
 # Set up logger
 Logger = setup_logger(logger_file="app")
 
+
 # Load configuration
 config = OmegaConf.load('./config.yml')
 OUTPUT_PATH = config.general.OUTPUT_DATA_FOLDER
@@ -55,6 +56,12 @@ def convert_to_csv(df: pd.DataFrame) -> bytes:
 
 def main() -> None:
     st.title("Opinion Mining Tool For Your Business")
+
+    if not os.path.exists(OUTPUT_PATH):
+        Logger.info(f"Output directory '{OUTPUT_PATH}' does not exist. Creating it...")
+        os.makedirs(OUTPUT_PATH)
+        Logger.info(f"Output directory '{OUTPUT_PATH}' created successfully.")
+
     csv_file = st.file_uploader("Please upload Your Business' Reviews", type=["csv"])
 
     if csv_file is not None:

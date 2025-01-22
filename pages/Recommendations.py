@@ -32,7 +32,7 @@ def generate_initial_recommendation(business_data):
     message = truncate_text(message, 4096)
     
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {"role": "system", "content": "Provide a thorough Business Recommendation based on the reviews and sentiment scores."},
             {"role": "user", "content": message},
