@@ -41,7 +41,7 @@ The **Multilingual Sentiment Analysis Tool** helps businesses gain valuable insi
 3. Install the required dependencies:
 
    ```shell
-   pip install -r requirements.txt
+   uv pip install -r requirements.txt
    ```
 
 4. Create an OpenAI API Key and Enter it on the Input Field in the Recommendations Page to proceed:
