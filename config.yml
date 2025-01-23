@@ -1,0 +1,4 @@
+general:
+  AMAZON_REVIEWS_INPUT_DATA: "./datasets/amazon_reviews.csv"
+  JUMIA_REVIEWS_INPUT_DATA: "./datasets/jumia_reviews.csv"
+  OUTPUT_DATA_FOLDER: "./output"
