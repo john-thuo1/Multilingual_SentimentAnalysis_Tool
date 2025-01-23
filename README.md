@@ -14,7 +14,7 @@ The **Multilingual Sentiment Analysis Tool** helps businesses gain valuable insi
 ![image](https://github.com/user-attachments/assets/5a5159a5-9c27-4537-a808-6f331e49e865)
 
 ## Recommendations
-![image](https://github.com/user-attachments/assets/e0e9d100-7754-4d3b-aa37-ca55bf4336f2)
+![image](https://github.com/user-attachments/assets/b1380c6a-33fb-4f38-b044-2596bc014c7a)
 ![image](https://github.com/user-attachments/assets/9da9c564-d615-4518-b3e1-7acc5f1a2348)
 
 ## Key Features
@@ -44,7 +44,7 @@ The **Multilingual Sentiment Analysis Tool** helps businesses gain valuable insi
    pip install -r requirements.txt
    ```
 
-4. Create an OpenAI API Key and add it to your `.env` file:
+4. Create an OpenAI API Key and Enter it on the Input Field in the Recommendations Page to proceed:
    [openai](https://platform.openai.com/)
 
 5. Run the application:
@@ -63,7 +63,7 @@ The **Multilingual Sentiment Analysis Tool** helps businesses gain valuable insi
 
 4. In the 'Visuals' section, choose the type of graph you want to display. You can select one or all available graphs.
 
-5. Finally, go to the 'Recommendations' section for tailored business insights powered by the OpenAI GPT-4 model.
+5. Finally, go to the 'Recommendations' section for tailored business insights powered by the OpenAI GPT-4 model. Enter the OpenAI API Key before proceeding to get insights.
 
 ## Contributing
 
