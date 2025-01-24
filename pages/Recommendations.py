@@ -12,8 +12,10 @@ from streamlit_chat import message
 # Setup logger
 Logger = setup_logger(logger_file="app")
 
+
 def truncate_text(text, max_length):
     return text[:max_length] + "..." if len(text) > max_length else text
+
 
 def generate_initial_recommendation(client, business_data):
     message = ""
@@ -32,12 +34,14 @@ def generate_initial_recommendation(client, business_data):
     )
     return response.choices[0].message.content.strip()
 
+
 def generate_follow_up_response(client, chat_history):
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=chat_history,
     )
     return response.choices[0].message.content.strip()
+
 
 def main():
     st.title("Business Recommendation Chat")

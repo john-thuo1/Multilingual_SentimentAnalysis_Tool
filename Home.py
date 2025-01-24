@@ -8,7 +8,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 from src.utils import setup_logger
 
-# Set up logger
+
+
 Logger = setup_logger(logger_file="app")
 
 
