@@ -55,7 +55,7 @@ The **Multilingual Sentiment Analysis Tool** helps businesses gain valuable insi
 
 ## Usage
 
-1. Prepare your review data in a suitable format, with at least `Date`, `Review`, `Month`, and `Year` columns. (You can use different column names, but ensure the application can match them during analysis.)
+1. Prepare your review data in a suitable format, with at least `Date`, `Review`, columns. (You can use different column names, but ensure the application can match them during analysis.)
    
 2. The application will download the updated dataset and store it locally. You can also download it directly from the browser, and it will include new columns for Sentiment Scores and Overall Sentiment.
 
@@ -77,6 +77,5 @@ Contributions are welcome! If you have ideas, suggestions, or bug reports, feel 
 ## Next Steps
 
 - Expand language support to include diverse African languages, such as Kiswahili.
-- Modify the data input requirement to only need the `Date` field for analysis instead of `Date`, `Month`, and `Year`.
 - Enhance the sentiment analysis model to handle nuanced sentiments and improve accuracy.
 - Incorporate real-time data analysis capabilities for continuous monitoring of customer sentiment.
