@@ -1,6 +1,6 @@
 # Multilingual Sentiment Analysis Tool For Your Business Reviews
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/yourrepository/blob/main/LICENSE)
+[Deployed Application](https://multilingualsentimentanalysistool.streamlit.app/)
 
 ## Overview
 
