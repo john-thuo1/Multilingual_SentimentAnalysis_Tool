@@ -28,7 +28,6 @@ def load_model() -> tp.Tuple[AutoTokenizer, AutoModelForSequenceClassification]:
         model = AutoModelForSequenceClassification.from_pretrained(
             "nlptown/bert-base-multilingual-uncased-sentiment"
         )
-        Logger.info("Model and tokenizer loaded successfully.")
         return tokenizer, model
     except (ImportError, FileNotFoundError, IOError) as e:
         Logger.error(f"Error loading model: {e}")
